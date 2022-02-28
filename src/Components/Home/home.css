@@ -1,0 +1,110 @@
+.home{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.home .bg img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    filter: blur(10px);
+}
+
+.home .bg p{
+    position: fixed;
+}
+
+.home .text{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.home .text h1{
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-variant-ligatures: common-ligatures;
+    text-align: left;
+}
+
+.home .text p{
+    font-size: xxx-large;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    text-align: left;
+}
+
+.home .text .buttons{
+    display: flex;
+}
+
+.home .text .buttons button{
+    margin: 8px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 110px;
+    height: 50px;
+    border-color: #0866a0;
+}
+
+.buttons button:hover{
+    cursor: pointer;
+}
+
+.buttons .one{
+    background-color: #0866a0;
+    color: white;
+    font-size: medium;
+}
+
+.buttons .second{
+    color: #0866a0;
+    font-size: medium;
+}
+
+.home .card{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    margin-left: 100px;
+    flex-direction: column;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card img{
+    width: 550px;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px 0px 12px 12px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 0px 2px 2px;
+}
+
+.info img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 0px 2px 2px;
+}
+
+.info p{
+    align-self: center;
+}
+
+.info a{
+    text-decoration: none;
+    color: #0866a0;
+}

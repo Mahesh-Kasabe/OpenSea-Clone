@@ -1,0 +1,100 @@
+.collection{
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    height: 100%;
+    width: 100%;
+}
+
+.collection .back #bgimg{
+    width: 100%;
+    height: 150px;
+    float: inherit;
+}
+
+.collection .back #profile{
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    float: initial;
+}
+
+.back h1{
+    color: white;
+    font-size: xxx-large;
+}
+
+.back p{
+    color: white;
+    font-size: large;
+}
+
+.back a{
+    text-decoration: none;
+    color: blue;
+}
+
+.infobox{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-left: 400px;
+    margin-right: 400px;
+    justify-content: space-evenly;
+    font-size: larger;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.infobox p{
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.desc{
+    margin-top: 30px;
+}
+
+.nfts{
+    display: flex;
+    flex-direction: row;
+    columns: 2 auto;
+}
+
+.nft{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 12px 12px 0px 0px;
+    margin: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    columns: 2 auto;
+}
+.nft img{
+    width: 230px;
+    height: 240px;
+
+}
+
+.nft .card{
+    border: 1px solid black;
+    width: 230px;
+    height: 100px;
+    border-radius: 0px 0px 12px 12px;
+    text-align: start;
+    background-color: rgb(50, 50, 50);
+}
+
+.nft .card p{
+    font-weight: 500;
+    margin-left: 10px;
+    color: white;
+}
+
+.heart{
+    display: flex;
+    float: right;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+}
