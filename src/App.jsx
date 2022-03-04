@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './App.css'
 import Home from './Components/Home/Home'
 import Navbar from './Components/Navbar'
-import Login from './Components/Login'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Collections from './Components/Collections/Collections'
 
@@ -16,9 +15,7 @@ function App() {
 
           <Route path='/' element={<> <Navbar /> <Home />  </>} />
 
-          <Route path='/collections' element={<> <Navbar /> <Collections /></>} />
-
-          <Route path='/login' element={<Login />} />
+          <Route path='/collections/0xd2f5965845277b4e8eb04e79d0fb62b7c13dca63' element={<> <Navbar /> <Collections /></>} />
 
         </Routes>
       </Router>

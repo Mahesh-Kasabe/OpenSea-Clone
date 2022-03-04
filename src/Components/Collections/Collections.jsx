@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import bg from "../../../assets/bg.jpg"
 import pf from "../../../assets/unnamed.png"
 import nft1 from "../../../assets/unnamed.png"
-import nft2 from "../../../assets/unnamed (1).png"
 import "./collection.css"
-import { BiHeart } from "react-icons/bi" 
+import { BiHeart } from "react-icons/bi"
+import axios from "axios"
 
 const Collections = () => {
+    const [nfts, setNFTS] = useState([])
+
+    useEffect(() => {
+        const getNft = async() => {
+             const Data = await axios.get('https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=0xE60348DF7838202429A639b16964C34C512BCE09&order_direction=asc')
+             setNFTS(Data.data.assets);
+             console.log(Data.data.assets);
+        }
+        return getNft();
+    }, [])
+    
     return (
         <div className='collection'>
 
@@ -17,13 +28,13 @@ const Collections = () => {
                 <p> created by <a href='#home'> mahi </a> </p>
                 <div className='infobox'>
                     <div id='1'>
-                        <p>18 <br /> items</p>
+                        <p>{nfts.length} <br /> items</p>
                     </div>
                     <div id='2'>
                         <p> 1 <br /> owners</p>
                     </div>
                     <div id='3'>
-                        <p>93 <br /> floor price</p>
+                        <p> 0 <br /> floor price</p>
                     </div>
                     <div id='4'>
                         <p> 22.5k <br /> volume traded</p>
@@ -35,74 +46,22 @@ const Collections = () => {
             </div>
 
             <div className='nfts'>
-                <div className='nft'>
-                    <img src={nft1} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
+                {
+                    nfts.map((nft) => {
+                    return (
+                    <div className='nft'>
+                        <img src={nft.image_preview_url} alt='' />
+                        <div className='card'>
+                            <p> {nft.asset_contract.name} <br /> {nft.name} </p>
+                            <p id='price'>{nft.traits}</p>
+                            <BiHeart className='heart' />
+                        </div>
                     </div>
-                </div>
-
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-            </div>
-            <div className='nfts'>
-                <div className='nft'>
-                    <img src={nft1} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
-                <div className='nft'>
-                    <img src={nft2} alt='' />
-                    <div className='card'>
-                        <p>Zombie Ape yacht club <br /> #2312 </p>
-                        <BiHeart className='heart' />
-                    </div>
-                </div>
-
+                    )
+   
+                    })
+                }
+                
             </div>
         </div>
     )

@@ -20,7 +20,7 @@ function Home() {
             OpenSea is the world's first and <br/> largest NFT marketplace
             </h1>
             <div className='buttons'>
-            <button onClick={() => {navigate("/collections")}} className='one' > Explore </button>
+            <button onClick={() => {navigate("/collections/0xd2f5965845277b4e8eb04e79d0fb62b7c13dca63")}} className='one' > Explore </button>
             <button className='second'> Create </button>
             </div>
         </div>

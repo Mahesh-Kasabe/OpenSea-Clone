@@ -26,7 +26,7 @@ const Navbar = () => {
         
         </div>
         
-        <p onClick={() => {navigate("/collections")}}>Explore</p>
+        <p onClick={() => {navigate("/collections/0xd2f5965845277b4e8eb04e79d0fb62b7c13dca63")}}>Explore</p>
         <p>Stats</p>
         <p>Resources</p>
         <p>Create</p>
